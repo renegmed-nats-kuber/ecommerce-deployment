@@ -1,0 +1,18 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nats-sales-clearance-sub
+spec:
+  selector:
+    matchLabels:
+      app: nats-sales-clearance-sub
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nats-sales-clearance-sub
+    spec:
+      containers:
+      - name: nats-sales-clearance-sub
+        image: renegmedal/ecommerce-sales-clearance:1.0.1
+

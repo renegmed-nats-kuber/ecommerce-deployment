@@ -1,0 +1,17 @@
+---
+apiVersion: "streaming.nats.io/v1alpha1"
+kind: "NatsStreamingCluster"
+metadata:
+  name: "ecommerce-stan"
+spec:
+  # Number of nodes in the cluster
+  size: 3
+
+  # NATS Streaming Server image to use, by default
+  # the operator will use a stable version
+  # 
+  # image: "nats-streaming:latest"
+
+  # Service to which NATS Streaming Cluster nodes will connect.
+  # 
+  natsSvc: "ecommerce-nats"

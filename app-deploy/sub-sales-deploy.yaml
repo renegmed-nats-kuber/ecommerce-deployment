@@ -1,0 +1,18 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nats-sales-sub
+spec:
+  selector:
+    matchLabels:
+      app: nats-sales-sub
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nats-sales-sub
+    spec:
+      containers:
+      - name: nats-sales-sub
+        image: renegmedal/ecommerce-sales:1.0.1
+
